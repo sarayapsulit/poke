@@ -1,0 +1,31 @@
+<div class="battle" >
+<div class="row">
+  <div id="yourPokemon" class="col s6">
+     <img  src="<%= @pokemon.pic %>" height="350" width="350">
+    <p> HP <%= @pokemon.health %></span>/<%= @pokemon.health %></p>
+  </div>
+  <div class="col s6 enemyPokemon">
+    <img src="<%= @enemy_pokemon[:pic] %>" height="350" width="350">
+      <p>HP <span class="enemy"><%= @enemy_pokemon[:health]%></span>/<%= @enemy_pokemon[:health]%></p>
+  </div>
+</div>
+
+
+</div>
+<div class="row">
+  <% @pokemon.moves.each do |move| %>
+  <form class="col s3 attack" action="/pokemon/<%= @pokemon.id %>/move" method="post">
+    <input type="hidden" name="attack_power" value="<%= move.attack_power %>">
+    <input type="submit"  value="<%= move.name.capitalize  %>">
+  </form>
+  <%end%>
+</div>
+
+<div class="gameover">
+
+</div>
+
+<script>
+  currentUserId = <%= current_user.id %>
+
+</script>

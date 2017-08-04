@@ -1,0 +1,17 @@
+<h4><%=current_user.username  %></h4>
+
+
+<% if current_user.pokemons %>
+  <ul class="row">
+    <%current_user.pokemons.each do |pokemon| %>
+    <li class="col s3">
+      <img src="<%= pokemon.pic %>" alt="">
+      <p><a href="/pokemon/<%= pokemon.id %>/battle"> Fight with</a> <a href="/pokemon/<%= pokemon.id %>"><%=pokemon.name.capitalize %></a></p>
+    </li>
+  <%end%>
+  </ul>
+<%end%>
+
+<form class="create-a-pokemon" action="/pokemon" method="post">
+  <input type="submit" value="catch a pokemon">
+</form>
