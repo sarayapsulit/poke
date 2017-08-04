@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/js/phaser.min.js"></script>
+ <script type="text/javascript" src="/js/battle.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <nav class="red accent-4">
+       <div class="nav-wrapper">
+          <h2><a href="/" class="brand-logo" href="/">Pokemon!</a></h2>
+          <ul id="nav" class="right">
+           <%if current_user%>
+             <li><a href="/users/<%=current_user.id %>"><%=current_user.username%></a></li>
+             <li><a href="/logout">Logout</a></li>
+           <%else%>
+             <li><a href="/users/new">Register</a></li>
+             <li><a href="/login">Login</a></li>
+           <%end%>
+         </ul>
+     </div>
+   </nav>
+   <div class="container">
+    <%= yield %>
+    </div>
+</body>
+</html>

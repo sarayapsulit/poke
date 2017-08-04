@@ -1,0 +1,26 @@
+<div class="container">
+  <%= erb :"/partials/_errors", layout: false %>
+
+  <form class="" action="/users" method="post">
+    <h2>Register</h2>
+    <hr>
+    <div class="form-group">
+      <label for="username" >Username:</label>
+      <input  id="username" type="text" class="form-control" name="user[username]" value="">
+    </div>
+
+    <div class="form-group">
+      <label for="email_input">Email:</label>
+      <input id="email_input"  name="user[email]" type="email" >
+    </div>
+
+    <div class="form-group">
+      <label for="password_input">Password:</label>
+      <input id="password_input" name="user[password]" type="password" >
+    </div>
+
+    <div class="form-group">
+      <button class="btn waves-effect waves-light" type="submit">Register</button>
+    </div>
+  </form>
+</div>
